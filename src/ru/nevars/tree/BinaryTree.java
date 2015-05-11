@@ -37,61 +37,46 @@ public class BinaryTree extends AbstractTree {
     @Override
     public void add(int value) {
         if (root == null) {
-            root = new Node(value);
+            root = new Node(value, level);
         } else {
             Node tree = root;
             while (true) {
                 if (tree.getLeft() != null && value < tree.getValue()) {
                     tree = tree.getLeft();
+                    level++;
                 } else if (tree.getLeft() == null) {
-                    Node leaf = new Node(value);
+                    Node leaf = new Node(value, ++level);
                     tree.setLeft(leaf);
-                    return;
+                    break;
                 } else if (tree.getRight() != null && value > tree.getValue()) {
                     tree = tree.getRight();
+                    level++;
                 } else {
-                    Node leaf = new Node(value);
+                    Node leaf = new Node(value, ++level);
                     tree.setRight(leaf);
-                    return;
+                    break;
                 }
             }
         }
+        level = 0;
     }
 
     @Override
     public void delete(int value) {
-        delete(root, value);
+
     }
 
-    private void delete(Node tree, int value) {
-        if (tree == null) {
-            throw new NullPointerException("Tree is empty");
-        } else {
-
-            while (true) {
-                if (value < tree.getValue() && tree.getLeft() != null) {
-                    tree = tree.getLeft();
-                } else if (value > tree.getValue() && tree.getRight() != null) {
-                    tree = tree.getRight();
-                } else if (value == tree.getValue()) {
-                    tree.setLeft(null);
-                    break;
-                } else {
-                    return;
-                }
-            }
-        }
-    }
 
     private void printDirectly(Node tree) {
         if (tree == null) {
             return;
         } else {
-            System.out.print(tree.getValue() + " ");
+            System.out.println(tree.toString());
             printDirectly(tree.getLeft());
             printDirectly(tree.getRight());
         }
     }
 
     private Node root;
+    private int level = 0;
 }

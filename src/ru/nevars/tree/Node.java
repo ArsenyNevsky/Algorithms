@@ -9,46 +9,57 @@ class Node {
 
     }
 
-    Node(int value) {
+    Node(int value, int level) {
         this.value = value;
+        this.level = level;
     }
 
-    Node(int value, Node left, Node right) {
-        this(value);
+    Node(int value, Node left, Node right, int level) {
+        this(value, level);
         this.left  = left;
         this.right = right;
     }
 
-    public Node getLeft() {
+    Node getLeft() {
         return left;
     }
 
-    public void setLeft(Node left) {
+    void setLeft(Node left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    Node getRight() {
         return right;
     }
 
-    public void setRight(Node right) {
+    void setRight(Node right) {
         this.right = right;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    void setValue(int value) {
         this.value = value;
     }
 
-    public void setNode(Node node) {
-
+    int getParentLevel() {
+        return level;
     }
 
-    private Node parent;
+    @Override
+    public String toString() {
+        StringBuilder stringRepresentValue = new StringBuilder();
+        for (int i = 0; i < level; i++) {
+            stringRepresentValue.append(SPACE);
+        }
+        return stringRepresentValue.append(value).toString();
+    }
+
+    private final String SPACE = "-";
     private Node left;
     private Node right;
     private int value;
+    private int level;
 }

@@ -2,6 +2,8 @@ package ru.nevars.sort;
 
 /**
  * Created by erafiil on 17.04.15.
+ *
+ * This code is a implenentations of the bubble sort
  */
 public class BubbleSort extends AbstractSort {
 
