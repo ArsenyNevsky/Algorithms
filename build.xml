@@ -1,0 +1,7 @@
+<project name="Algorithms" default="all">
+    <description>There are many projects for understanding algorithms</description>
+
+    <target name="all">
+        <mkdir dir="build"/>
+    </target>
+</project>
