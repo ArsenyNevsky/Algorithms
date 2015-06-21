@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student login="nevars" faculty="matmech">
+        <name>Arseny</name>
+        <telephone>+7 921 123 45678</telephone>
+        <address>
+            <country>Russia</country>
+            <city>SPb</city>
+            <postcode>198504</postcode>
+        </address>
+    </student>
+    <student login="self-vs-self" faculty="matmech">
+        <name>Timofei</name>
+        <telephone>+7 931 987 6543</telephone>
+        <address>
+            <country>Russia</country>
+            <city>Saint-Petersburg</city>
+            <postcode>123456</postcode>
+        </address>
+    </student>
+</students>

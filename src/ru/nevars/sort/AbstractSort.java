@@ -8,8 +8,9 @@ import java.util.Arrays;
 public abstract class AbstractSort {
 
     /**
-     *
-     * @param message
+     * This method display all elements of an array to a console
+     * @param message . It's able to put any message before displaying
+     *                all elements of the array.
      */
     public void printArray(String message) {
         if (array == null) {
